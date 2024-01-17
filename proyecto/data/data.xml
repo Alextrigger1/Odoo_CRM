@@ -1,0 +1,26 @@
+<odoo>
+    <!-- Datos de Alumno -->
+    <record id="alumno_demo_1" model="proyecto.alumno">
+        <field name="nif">12345678A</field>
+        <field name="nombre">Juan</field>
+        <field name="apellido1">Gómez</field>
+        <field name="apellido2">Pérez</field>
+        <field name="telefono">123456789</field>
+        <field name="curso">2023/2024</field>
+        <field name="ciclo">DAM2</field>
+        <field name="notas">Alumno de prueba</field>
+    </record>
+
+    <!-- Datos de Empresa -->
+    <record id="empresa_demo_1" model="proyecto.empresa">
+        <field name="cif">A12345678</field>
+        <field name="nombre">Empresa Ejemplo</field>
+        <field name="direccion">Calle Ejemplo, 123</field>
+        <field name="telefono">987654321</field>
+        <field name="persona_contacto">Persona de Contacto</field>
+        <field name="representante">Representante de la Empresa</field>
+        <field name="nif_representante">12345678B</field>
+        <field name="convenio" eval="True"/>
+        <field name="notas">Empresa de prueba</field>
+    </record>
+</odoo>

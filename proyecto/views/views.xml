@@ -1,0 +1,127 @@
+<odoo>
+  <data>
+
+    <!-- Vista Tree para Alumnos -->
+    <record model="ir.ui.view" id="proyecto.alumno_list_view">
+      <field name="name">proyecto.alumno.view.tree</field>
+      <field name="model">proyecto.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nif" />
+          <field name="nombre" />
+          <field name="apellido1" />
+          <field name="apellido2" />
+          <field name="telefono" />
+          <field name="curso" />
+          <field name="ciclo" />
+          <field name="notas" />
+        </tree>
+      </field>
+      <field name="priority" eval="16" />
+    </record>
+
+    <!-- Vista Tree para Empresas -->
+    <record model="ir.ui.view" id="proyecto.empresa_list_view">
+      <field name="name">proyecto.empresa.view.tree</field>
+      <field name="model">proyecto.empresa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cif" />
+          <field name="nombre" />
+          <field name="direccion" />
+          <field name="telefono" />
+          <field name="persona_contacto" />
+          <field name="representante" />
+          <field name="nif_representante" />
+          <field name="convenio" />
+          <field name="notas" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista para Puesto Practica -->
+    <record id="view_puesto_practica_tree" model="ir.ui.view">
+      <field name="name">proyecto.puesto_practica.tree</field>
+      <field name="model">proyecto.puesto_practica</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="nombre_alumno"/>
+              <field name="nif_alumno"/>
+              <field name="nombre_empresa"/>
+              <field name="cif_empresa"/>
+              <field name="fecha_inicio"/>
+              <field name="fecha_fin"/>
+              <field name="horario_manana" />
+              <field name="horario_tarde" />
+              <field name="tutor_empresa"/>
+              <field name="relacion_alumno"/>
+              <field name="notas"/>
+          </tree>
+      </field>
+    </record>
+
+    <!-- Vista para Puesto Practica -->
+    <record id="view_contacto_tree" model="ir.ui.view">
+      <field name="name">proyecto.contacto.tree</field>
+      <field name="model">proyecto.contacto</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="notas"/>
+          </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record id="action_alumnos_tree" model="ir.actions.act_window">
+      <field name="name">Lista de Alumnos</field>
+      <field name="res_model">proyecto.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_empresa_tree" model="ir.actions.act_window">
+      <field name="name">Lista de Empresas</field>
+      <field name="res_model">proyecto.empresa</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_puesto_practica_tree" model="ir.actions.act_window">
+      <field name="name">Lista de Puestos Practica</field>
+      <field name="res_model">proyecto.puesto_practica</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_contacto_tree" model="ir.actions.act_window">
+      <field name="name">Lista de Contactos</field>
+      <field name="res_model">proyecto.contacto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Proyecto" id="proyecto.menu_root" />
+
+
+    <!-- menu categories -->
+
+    <menuitem id="proyecto.menu_alumnos" name="Alumnos" parent="proyecto.menu_root" sequence="10" />
+    <menuitem id="menu_alumnos_tree" name="Lista de Alumnos" parent="menu_alumnos"
+      action="action_alumnos_tree" />
+
+    <menuitem id="proyecto.menu_empresa" name="Empresas" parent="proyecto.menu_root" sequence="10" />
+    <menuitem id="menu_empresa_tree" name="Lista de Empresas" parent="menu_empresa"
+      action="action_empresa_tree" />
+
+    <menuitem id="proyecto.menu_puesto_practica" name="Puestos Práctica" parent="proyecto.menu_root"
+      sequence="10" />
+    <menuitem id="menu_puesto_practica_tree" name="Lista de Puestos Práctica" parent="menu_puesto_practica"
+      action="action_puesto_practica_tree" />
+
+    <menuitem id="proyecto.menu_contacto" name="Contactos" parent="proyecto.menu_root"
+      sequence="10" />
+    <menuitem id="menu_contacto_tree" name="Lista de contactos" parent="menu_contacto"
+      action="action_contacto_tree" />
+
+
+    
+  </data>
+</odoo>
